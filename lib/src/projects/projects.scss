@@ -1,0 +1,28 @@
+.grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 25% auto;
+}
+
+.left {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.right {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+project-card {
+  width: 352px;
+  margin-bottom: 10px;
+}
+
+projects-title {
+  margin-bottom: 10px;
+}

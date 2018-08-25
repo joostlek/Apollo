@@ -5,10 +5,8 @@
 // https://github.com/material-components/material-components-web/blob/master/demos/card.scss
 @import 'package:angular_components/css/material/material';
 
-$mdc-card-image: 'img.jpg';
-
 :host {
-  display: flex;
+  display: block;
 }
 
 // Provide a size for the card. Cards normally take up the complete space of
@@ -30,11 +28,6 @@ $mdc-card-image: 'img.jpg';
   margin: 0;
 }
 
-// Use the same image as the mdc-web example.
-.demo-card__media {
-  background-image: url($mdc-card-image);
-}
-
 .demo-card__primary {
   padding: $mat-grid * 2;
 }
@@ -51,4 +44,3 @@ section {
     margin-left: $mat-grid * 4;
   }
 }
-

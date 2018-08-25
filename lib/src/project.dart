@@ -1,4 +1,5 @@
 import 'package:apollo/src/link/link.dart';
+import 'package:apollo/src/short_project.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'project.g.dart';
@@ -17,4 +18,13 @@ class Project {
 
   factory Project.fromJson(Map<String, dynamic> json) =>
       _$ProjectFromJson(json);
+
+  ShortProject toShortProject() {
+    return ShortProject(
+      this.projectId,
+      this.name,
+      this.shortDescription,
+      this.imageUrl,
+    );
+  }
 }

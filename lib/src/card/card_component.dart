@@ -4,6 +4,8 @@ import 'package:angular_components/material_button/material_button.dart';
 import 'package:angular_components/material_icon/material_icon.dart';
 import 'package:angular_components/material_expansionpanel/material_expansionpanel_set.dart';
 import 'package:angular_components/material_expansionpanel/material_expansionpanel.dart';
+import 'package:apollo/src/link/link_component.dart';
+import 'package:apollo/src/link/link.dart';
 
 @Component(
   selector: 'info-card',
@@ -12,6 +14,8 @@ import 'package:angular_components/material_expansionpanel/material_expansionpan
     MaterialIconComponent,
     MaterialExpansionPanelSet,
     MaterialExpansionPanel,
+    LinkComponent,
+    NgFor,
   ],
   templateUrl: 'card_component.html',
   styleUrls: [
@@ -22,4 +26,12 @@ import 'package:angular_components/material_expansionpanel/material_expansionpan
   ],
   providers: const <dynamic>[materialProviders],
 )
-class CardComponent {}
+class CardComponent {
+  List<Link> links = <Link>[
+    Link('https://www.github.com/joostlek', 'Github', 'Joostlek', 'fa-github'),
+    Link('mailto:joostlek@outlook.com', 'Email', 'joostlek@outlook.com',
+        'fa-envelope-o'),
+    Link('https://www.linkedin.com/in/joostlekkerkerker/', 'LinkedIn',
+        'Joost Lekkerkerker', 'fa-linkedin'),
+  ];
+}

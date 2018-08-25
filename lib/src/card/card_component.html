@@ -13,9 +13,13 @@
         <div class="demo-card__secondary">
             Utrecht, The Netherlands
         </div>
+        <material-expansionpanel-set>
+            <material-expansionpanel flat name="Biography" [showSaveCancel]="false" [expanded]="true">Hey, I'm Joost Lekkerkerker, 20 years old from the Netherlands</material-expansionpanel>
+            <material-expansionpanel flat name="Contact" [showSaveCancel]="false">
+                <div *ngFor="let link of links">
+                    <link-url [link]="link"></link-url>
+                </div>
+            </material-expansionpanel>
+        </material-expansionpanel-set>
     </div>
-    <material-expansionpanel-set>
-        <material-expansionpanel flat name="Biography" [showSaveCancel]="false" [expanded]="true" class="demo-size">Hey, I'm Joost Lekkerkerker, 20 years old from the Netherlands</material-expansionpanel>
-        <material-expansionpanel flat name="Contact" [showSaveCancel]="false" class="demo-size"></material-expansionpanel>
-    </material-expansionpanel-set>
 </section>

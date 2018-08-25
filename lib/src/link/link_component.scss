@@ -1,0 +1,35 @@
+.fa {
+  float: left;
+  color: #000;
+}
+
+.link-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: rgba(0, 0, 0, 0.87);
+  font: 500 20px/ 1em Roboto, Noto, sans-serif;
+  letter-spacing: 0.005em;
+  font-family: "Roboto Slab", Helvetica, serif;
+  margin: 0;
+}
+
+.link-subtitle {
+    color: rgba(0, 0, 0, 0.87);
+    font: 400 15px/ 24px Roboto, Noto, sans-serif;
+    letter-spacing: 0.01em;
+    margin: 0;
+}
+
+.titles {
+  height: 48px;
+  margin-left: 58px;
+  padding-top: 5px;
+}
+
+.link {
+  height: 48px;
+  width: 350px;
+  cursor: pointer;
+  text-decoration: none;
+}

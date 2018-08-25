@@ -1,9 +1,17 @@
-<projects-title></projects-title>
-<div class="grid">
-    <div class="left">
-        <project-card [project]="project"></project-card>
-    </div>
-    <div class="right">
-        <project-card [project]="erosProject"></project-card>
+<div *ngIf="projects.length > 0">
+    <div class="grid">
+        <div class="title">
+            <projects-title></projects-title>
+        </div>
+        <div class="left">
+            <div *ngFor="let project of projects.take((projects.length / 2).ceil())">
+                <project-card [project]="project"></project-card>
+            </div>
+        </div>
+        <div class="right">
+            <div class="right" *ngFor="let project of projects.skip((projects.length / 2).ceil())">
+                <project-card [project]="project"></project-card>
+            </div>
+        </div>
     </div>
 </div>

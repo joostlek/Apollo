@@ -1,21 +1,28 @@
 .grid {
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 25% auto;
+  grid-template-rows: auto auto;
 }
 
 .left {
   grid-column-start: 1;
   grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 
 .right {
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.title {
+  grid-row-start: 1;
   grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
 }
 
 project-card {

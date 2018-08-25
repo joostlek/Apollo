@@ -1,8 +1,11 @@
+import 'dart:async';
+
 import 'package:angular/angular.dart';
 import 'package:angular_components/angular_components.dart';
 import 'package:angular_components/material_button/material_button.dart';
 import 'package:angular_components/material_icon/material_icon.dart';
-import 'package:apollo/src/project.dart';
+import 'package:apollo/src/project_service.dart';
+import 'package:apollo/src/short_project.dart';
 import 'projects_title/projects_title.dart';
 import '../project_card/project_card.dart';
 
@@ -13,13 +16,29 @@ import '../project_card/project_card.dart';
     MaterialIconComponent,
     ProjectCardComponent,
     ProjectsTitleComponent,
+    NgFor,
+    NgIf,
   ],
   templateUrl: 'projects.html',
   styleUrls: ['projects.scss.css'],
-  providers: const <dynamic>[materialProviders],
+  providers: const <dynamic>[
+    materialProviders,
+    ClassProvider(ProjectService),
+  ],
 )
-class ProjectsComponent {
-  Project project = Project(1, 'Apollo', 'Personal site', 'Untitled.png');
-  Project erosProject =
-      Project(2, 'Eros', 'Coupon verification tool', 'eros_siteheader.png');
+class ProjectsComponent implements OnInit {
+  final ProjectService _projectService;
+
+  ProjectsComponent(this._projectService);
+
+  List<ShortProject> projects = [];
+
+  @override
+  void ngOnInit() {
+    getProjects();
+  }
+
+  Future<void> getProjects() async {
+    projects = await _projectService.getAllShort();
+  }
 }

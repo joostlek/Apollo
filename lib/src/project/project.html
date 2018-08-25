@@ -1,0 +1,22 @@
+<section *ngIf="project != null">
+    <div class="mdc-card mdc-card--outlined">
+        <div class="mdc-card__media mdc-card__media--16-9" [ngStyle]="{'background-image': 'url(' + project.imageUrl + ')', 'height': '108px', 'width': '192px'}"></div>
+        <div class="demo-card__primary">
+            <material-button icon (click)="goBack()"><material-icon icon="arrow_back"></material-icon></material-button>
+            <h2 class="demo-card__title">{{project.name}}</h2>
+            <h3 class="demo-card__subtitle">{{project.shortDescription}}</h3>
+        </div>
+        <div class="grid">
+            <div class="info">
+                <div class="demo-card__secondary">
+                    {{project.description}}
+                </div>
+            </div>
+            <div class="links">
+                <div *ngFor="let link of project.links">
+                    <link-url [link]="link"></link-url>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
